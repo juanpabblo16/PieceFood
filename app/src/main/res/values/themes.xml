@@ -1,9 +1,9 @@
 <resources xmlns:tools="http://schemas.android.com/tools">
     <!-- Base application theme. -->
-    <style name="Base.Theme.PieceFood" parent="Theme.AppCompat.Light.NoActionBar">
+    <style name="Base.Theme.IcesiApp241" parent="Theme.Material3.DayNight.NoActionBar">
         <!-- Customize your light theme here. -->
         <!-- <item name="colorPrimary">@color/my_light_primary</item> -->
     </style>
 
-    <style name="Theme.PieceFood" parent="Base.Theme.PieceFood" />
+    <style name="Theme.IcesiApp241" parent="Base.Theme.IcesiApp241" />
 </resources>
