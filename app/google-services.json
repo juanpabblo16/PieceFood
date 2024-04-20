@@ -1,0 +1,29 @@
+{
+  "project_info": {
+    "project_number": "776481358945",
+    "project_id": "appmoviles-8a62f",
+    "storage_bucket": "appmoviles-8a62f.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:776481358945:android:aebeb95be33ad6b2c8d620",
+        "android_client_info": {
+          "package_name": "icesi.edu.co.piecefood"
+        }
+      },
+      "oauth_client": [],
+      "api_key": [
+        {
+          "current_key": "AIzaSyDSFJVgva6ra9fhsY_rHUBogO2BsZtohKc"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": []
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
