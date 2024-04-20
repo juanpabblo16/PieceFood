@@ -10,17 +10,10 @@
         android:label="@string/app_name"
         android:roundIcon="@mipmap/ic_launcher_round"
         android:supportsRtl="true"
-<<<<<<< HEAD
         android:theme="@style/Theme.PieceFood"
         tools:targetApi="31">
         <activity
-            android:name=".LoginActivity"
-=======
-        android:theme="@style/Theme.IcesiApp241"
-        tools:targetApi="31">
-        <activity
             android:name=".SignupActivity"
->>>>>>> 94568a2 (Initial commit)
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -28,14 +21,6 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-<<<<<<< HEAD
-        <activity android:name=".SignupActivity" />
-        <activity android:name=".ProfileActivity" />
-        <meta-data
-            android:name="preloaded_fonts"
-            android:resource="@array/preloaded_fonts" />
-=======
->>>>>>> 94568a2 (Initial commit)
     </application>
 
 </manifest>

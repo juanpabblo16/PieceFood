@@ -22,33 +22,17 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.createAccountBtn.setOnClickListener {
+        binding.signupBtn.setOnClickListener {
+            viewModel.signup(
+                User("",
+                    binding.usernameET.text.toString(),
+                    binding.emailET.text.toString(),
+                    binding.nameET.text.toString()
+                ),
+                binding.passET.text.toString()
 
-            val password = binding.passwordET.text.toString()
-            val confirmPassword = binding.confirmpassET.text.toString()
-
-            if (password.compareTo(confirmPassword)==0) {
-                // Las contraseñas coinciden
-                viewModel.signup(
-                    User("",
-                        binding.usernameText.text.toString(),
-                        binding.emailText.text.toString()
-                    ),
-                    password
-                )
-
-                // Ir a la pantalla de Login
-                startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
-            } else {
-                //Las contraseñas no coinciden
-                Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
-            }
+            )
         }
-
-        binding.backBtn.setOnClickListener {
-            startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
-        }
-
 
         viewModel.authStatus.observe(this) {
             when (it) {
