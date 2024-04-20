@@ -34,6 +34,11 @@ class SignupActivity : AppCompatActivity() {
             )
         }
 
+        // Configurar OnClickListener para el enlace de inicio de sesión
+        binding.loginLink.setOnClickListener {
+            startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
+        }
+
         viewModel.authStatus.observe(this) {
             when (it) {
                 is AppAuthState.Loading -> {
