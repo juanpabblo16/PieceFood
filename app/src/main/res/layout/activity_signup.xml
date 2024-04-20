@@ -304,6 +304,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
 
+                    android:id="@+id/nameET"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:inputType="text"
@@ -323,6 +324,7 @@
 
                 <com.google.android.material.textfield.TextInputEditText
 
+                    android:id="@+id/usernameET"
                     android:layout_width="match_parent"
                     android:layout_height="56dp"
                     android:inputType="textEmailAddress"
