@@ -25,6 +25,10 @@ class LoginActivity : AppCompatActivity() {
             viewModel.login(email, password)
         }
 
+        binding.singupBtn.setOnClickListener {
+            startActivity(Intent(this@LoginActivity, SignupActivity::class.java))
+        }
+
         // Observar el estado de autenticación y tomar acciones en consecuencia
         viewModel.authState.observe(this) { state ->
             when (state) {

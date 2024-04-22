@@ -45,6 +45,10 @@ class SignupActivity : AppCompatActivity() {
             }
         }
 
+        binding.backBtn.setOnClickListener {
+            startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
+        }
+
 
         viewModel.authStatus.observe(this) {
             when (it) {
