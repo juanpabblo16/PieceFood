@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import icesi.edu.co.piecefood.databinding.ActivityLoginBinding
+import icesi.edu.co.icesiapp241.databinding.ActivityLoginBinding
 import icesi.edu.co.piecefood.model.AppAuthState
 import icesi.edu.co.piecefood.viewmodel.LoginViewModel
 class LoginActivity : AppCompatActivity() {
@@ -18,13 +18,15 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+        // Configurar el botón de inicio de sesión
         binding.loginBtn.setOnClickListener {
-            val email = binding.emailET.text.toString()
+            val email = binding.usernameET.text.toString()
             val password = binding.passwordET.text.toString()
             viewModel.login(email, password)
         }
 
-        viewModel.authStatus.observe(this) { state ->
+        // Observar el estado de autenticación y tomar acciones en consecuencia
+        viewModel.authState.observe(this) { state ->
             when (state) {
                 is AppAuthState.Loading -> {
                     // Mostrar indicador de carga
@@ -35,7 +37,7 @@ class LoginActivity : AppCompatActivity() {
                     Toast.makeText(this, state.message, Toast.LENGTH_SHORT).show()
                 }
                 is AppAuthState.Success -> {
-                    // Navegar a la actividad de perfil
+                    // Navegar a la actividad de perfil después de iniciar sesión correctamente
                     startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
                     finish()
                 }
