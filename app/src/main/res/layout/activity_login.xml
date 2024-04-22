@@ -8,11 +8,12 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CL_helpText"
-        android:layout_width="281dp"
-        android:layout_height="53dp"
-        android:layout_marginBottom="36dp"
+        android:layout_width="271dp"
+        android:layout_height="47dp"
+        android:layout_marginBottom="52dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.435"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -43,8 +44,8 @@
         android:id="@+id/CL_login"
         android:layout_width="310dp"
         android:layout_height="82dp"
-        android:layout_marginEnd="48dp"
-        android:layout_marginBottom="19dp"
+        android:layout_marginEnd="60dp"
+        android:layout_marginBottom="8dp"
         app:layout_constraintBottom_toTopOf="@+id/CL_helpText"
         app:layout_constraintEnd_toEndOf="parent">
 
@@ -64,9 +65,9 @@
         android:id="@+id/CL_title"
         android:layout_width="294dp"
         android:layout_height="107dp"
-        android:layout_marginTop="12dp"
+        android:layout_marginTop="16dp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.526"
+        app:layout_constraintHorizontal_bias="0.495"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_logo">
 
@@ -85,10 +86,10 @@
             android:textSize="48sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.285"
+            app:layout_constraintHorizontal_bias="0.222"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
-            app:layout_constraintVertical_bias="0.291" />
+            app:layout_constraintVertical_bias="0.0" />
 
         <TextView
             android:id="@+id/logintxt"
