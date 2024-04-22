@@ -5,7 +5,7 @@ import android.os.Bundle
 import android.widget.Toast
 import androidx.activity.viewModels
 import androidx.appcompat.app.AppCompatActivity
-import icesi.edu.co.icesiapp241.databinding.ActivityLoginBinding
+import icesi.edu.co.piecefood.databinding.ActivityLoginBinding
 import icesi.edu.co.piecefood.model.AppAuthState
 import icesi.edu.co.piecefood.viewmodel.LoginViewModel
 class LoginActivity : AppCompatActivity() {

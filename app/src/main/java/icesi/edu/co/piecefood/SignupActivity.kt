@@ -22,20 +22,20 @@ class SignupActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
-        binding.signupBtn.setOnClickListener {
+        binding.createAccountBtn.setOnClickListener {
             viewModel.signup(
                 User("",
-                    binding.usernameET.text.toString(),
-                    binding.emailET.text.toString(),
-                    binding.nameET.text.toString()
+                    binding.usernameText.text.toString(),
+                    binding.emailText.text.toString(),
+                    binding.usernameText.text.toString()
                 ),
-                binding.passET.text.toString()
+                binding.passwordET.text.toString()
 
             )
         }
 
         // Configurar OnClickListener para el enlace de inicio de sesión
-        binding.loginLink.setOnClickListener {
+        binding.createAccountBtn.setOnClickListener {
             startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
         }
 
