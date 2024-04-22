@@ -10,10 +10,9 @@
         android:id="@+id/CL_helpText"
         android:layout_width="281dp"
         android:layout_height="53dp"
-        android:layout_marginBottom="52dp"
+        android:layout_marginBottom="36dp"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.496"
         app:layout_constraintStart_toStartOf="parent">
 
         <Button
@@ -44,9 +43,9 @@
         android:id="@+id/CL_login"
         android:layout_width="310dp"
         android:layout_height="82dp"
-        android:layout_marginEnd="56dp"
-        android:layout_marginBottom="112dp"
-        app:layout_constraintBottom_toBottomOf="parent"
+        android:layout_marginEnd="48dp"
+        android:layout_marginBottom="19dp"
+        app:layout_constraintBottom_toTopOf="@+id/CL_helpText"
         app:layout_constraintEnd_toEndOf="parent">
 
         <Button
@@ -63,9 +62,11 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CL_title"
-        android:layout_width="299dp"
-        android:layout_height="120dp"
+        android:layout_width="294dp"
+        android:layout_height="107dp"
+        android:layout_marginTop="12dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.526"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_logo">
 
@@ -103,9 +104,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CL_logo"
-        android:layout_width="202dp"
-        android:layout_height="251dp"
+        android:layout_width="208dp"
+        android:layout_height="240dp"
         android:layout_marginStart="50dp"
+        android:layout_marginTop="16dp"
         android:layout_marginEnd="50dp"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.495"
@@ -114,12 +116,14 @@
 
         <ImageView
             android:id="@+id/logo"
-            android:layout_width="211dp"
-            android:layout_height="239dp"
+            android:layout_width="208dp"
+            android:layout_height="235dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.0"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintVertical_bias="0.0"
             app:srcCompat="@drawable/PieceFoodLogo" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
