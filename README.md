@@ -3,7 +3,7 @@
 PieceFood is a project developed for the MOBILE APPLICATIONS subject.
 
 <p align="center">
-  <img src="https://github.com/juandy7/PieceFood/assets/103261154/96237d2f-fe1d-4c8f-bf38-c51fe9910a88" alt="PieceFoodLogo">
+  <img src="https://raw.githubusercontent.com/juanpabblo16/PieceFood/master/app/src/main/res/drawable/piecefoodlogo.png" alt="PieceFoodLogo">
 </p>
 
 PieceFood is an application designed for individuals seeking instant recipes based on ingredients available in their kitchen. Beyond providing recipes, the application aims to foster a vibrant community where users can share opinions, recipes, and rate culinary creations.
