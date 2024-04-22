@@ -20,7 +20,7 @@ class LoginActivity : AppCompatActivity() {
 
         // Configurar el botón de inicio de sesión
         binding.loginBtn.setOnClickListener {
-            val email = binding.usernameET.text.toString()
+            val email = binding.emailET.text.toString()
             val password = binding.passwordET.text.toString()
             viewModel.login(email, password)
         }
