@@ -69,7 +69,9 @@
         android:layout_height="50dp"
         android:layout_marginStart="57dp"
         android:layout_marginTop="21dp"
+        android:layout_marginEnd="57dp"
         android:background="@drawable/round_button"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_title">
 
@@ -81,6 +83,7 @@
             android:ems="10"
             android:hint="  Email"
             android:inputType="text"
+            android:paddingStart="15dp"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -91,30 +94,46 @@
         android:layout_height="50dp"
         android:layout_marginStart="58dp"
         android:layout_marginTop="18dp"
-        android:layout_marginEnd="77dp"
+        android:layout_marginEnd="57dp"
         android:background="@drawable/round_button"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_email">
 
-        <EditText
+        <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordET"
-            android:layout_width="300dp"
+            android:layout_width="260dp"
             android:layout_height="50dp"
-            android:backgroundTint="#00FFFFFF"
-            android:ems="10"
-            android:hint="  Password"
-            android:inputType="textPassword"
+            android:layout_marginTop="15dp"
+            android:layout_marginBottom="10dp"
+            android:hint="Password"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
+            app:layout_constraintTop_toTopOf="parent"
+            app:passwordToggleEnabled="true">
+
+
+            <com.google.android.material.textfield.TextInputEditText
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
+                android:ems="15"
+                android:inputType="textPassword"
+                android:paddingStart="0dp" />
+
+        </com.google.android.material.textfield.TextInputLayout>
+
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CL_loginBtn"
         android:layout_width="301dp"
         android:layout_height="62dp"
-        android:layout_marginStart="57dp"
+        android:layout_marginStart="58dp"
         android:layout_marginTop="48dp"
+        android:layout_marginEnd="57dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_passLoguin">
 
@@ -133,8 +152,10 @@
         android:id="@+id/CL_help"
         android:layout_width="253dp"
         android:layout_height="46dp"
-        android:layout_marginStart="81dp"
+        android:layout_marginStart="58dp"
         android:layout_marginTop="32dp"
+        android:layout_marginEnd="57dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_loginBtn">
 
