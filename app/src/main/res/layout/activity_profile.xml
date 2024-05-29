@@ -6,46 +6,74 @@
     android:layout_height="match_parent"
     tools:context=".ProfileActivity">
 
+    <ImageView
+        android:id="@+id/imageView"
+        android:layout_width="443dp"
+        android:layout_height="250dp"
+        android:src="@tools:sample/avatars"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="#185C43" />
+
     <androidx.cardview.widget.CardView
         android:id="@+id/cardView"
         android:layout_width="180dp"
         android:layout_height="180dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="16dp"
-        android:layout_marginEnd="16dp"
+        android:layout_marginStart="115dp"
+        android:layout_marginTop="148dp"
+        android:layout_marginEnd="115dp"
         app:cardCornerRadius="90dp"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            app:srcCompat="@drawable/ic_launcher_background" />
+        <androidx.cardview.widget.CardView
+            android:layout_width="145dp"
+            android:layout_height="148dp"
+            android:layout_margin="17dp"
+            app:cardCornerRadius="90dp" />
     </androidx.cardview.widget.CardView>
 
     <TextView
         android:id="@+id/usernameTV"
         android:layout_width="0dp"
         android:layout_height="wrap_content"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:text="Username"
         android:textAlignment="center"
         android:textSize="24sp"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.497"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/cardView" />
 
     <TextView
-        android:id="@+id/emailTV"
+        android:id="@+id/textView5"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
-        android:layout_marginTop="12dp"
-        android:text="Email"
+        android:layout_marginBottom="24dp"
+        android:text="Profile"
+        android:textColor="#FFFFFF"
+        android:textSize="40sp"
+        android:textStyle="bold"
+        app:layout_constraintBottom_toTopOf="@+id/cardView"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+    <Button
+        android:id="@+id/backBtn"
+        android:layout_width="wrap_content"
+        android:layout_height="48dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginTop="20dp"
+        android:background="#00FFFFFF"
+        android:backgroundTint="#000000"
+        android:text="Back"
+        android:textAllCaps="false"
+        android:textColor="#238027"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/usernameTV" />
+        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
