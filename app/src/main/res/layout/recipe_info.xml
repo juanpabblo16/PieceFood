@@ -1,0 +1,147 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <!-- Primer ConstraintLayout (verde superior) -->
+
+    <!-- Segundo ConstraintLayout (blanco inferior) -->
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutTop"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@color/mainColor"
+        app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBottom"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <!-- Primer NavigationView (superior) -->
+
+        <!-- ImageView redondo -->
+
+        <!-- TextView de Título de Receta -->
+
+        <!-- Segundo NavigationView (debajo del título) -->
+
+        <!-- TextView de Descripción de Receta -->
+
+        <!-- TextView de Autor de Receta -->
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="158dp"
+            android:layout_height="158dp"
+            android:layout_marginTop="15dp"
+            android:background="@drawable/round_image"
+            android:scaleType="centerCrop"
+            android:src="@drawable/"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.498"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView2" />
+
+        <TextView
+            android:id="@+id/textViewDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="5dp"
+            android:text="Ensalada con frambuesa"
+            android:textColor="@android:color/white"
+            android:textSize="18sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/imageView" />
+
+        <TextView
+            android:id="@+id/textViewRating"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="★★★★★"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.497"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewAuthor" />
+
+        <TextView
+            android:id="@+id/textViewAuthor"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="Hecha por: Maria José Vargas"
+            android:textColor="@android:color/white"
+            android:textSize="14sp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/textViewDescription" />
+
+        <!-- TextView de Rating -->
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView2"
+            android:layout_width="409dp"
+            android:layout_height="56dp"
+            android:background="@color/mainColor"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent"
+            app:menu="@menu/upper" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:layout_width="409dp"
+            android:layout_height="50dp"
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/recipe" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/constraintLayoutBottom"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:background="@android:color/white"
+        app:layout_constraintTop_toBottomOf="@+id/constraintLayoutTop"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintBottom_toBottomOf="parent">
+
+        <!-- Tercer NavigationView (inferior con íconos) -->
+
+        <!-- TextView de Ingredientes -->
+
+        <TextView
+            android:id="@+id/textViewIngredients"
+            android:layout_width="282dp"
+            android:layout_height="172dp"
+            android:layout_marginTop="56dp"
+            android:layout_marginBottom="164dp"
+            android:text="12 Frambuesas\nQueso Rayado\nPepinillos\nPimentón\nRepollos"
+            android:textColor="@android:color/black"
+            android:textSize="16sp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintHorizontal_bias="0.156"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView"
+            android:layout_width="409dp"
+            android:layout_height="56dp"
+            android:background="@android:color/white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:menu="@menu/main_menu" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</androidx.constraintlayout.widget.ConstraintLayout>
