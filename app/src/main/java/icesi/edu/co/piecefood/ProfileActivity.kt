@@ -22,7 +22,7 @@ class ProfileActivity : AppCompatActivity() {
 
         viewmodel.userState.observe(this){
             binding.emailTV.text = it.email
-            binding.nameTV.text = it.name
+            binding.usernameTV.text = it.username
         }
     }
 }

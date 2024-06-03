@@ -14,14 +14,17 @@ class LoginActivity : AppCompatActivity() {
     private val viewModel: LoginViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
+
         super.onCreate(savedInstanceState)
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
         // Configurar el botón de inicio de sesión
         binding.loginBtn.setOnClickListener {
-            val email = binding.usernameET.text.toString()
-            val password = binding.passwordET.text.toString()
+            val passwordEditText = binding.passwordET.editText
+            val passwordLogin = passwordEditText?.text.toString()
+            val email = binding.emailET.text.toString()
+            val password = passwordLogin
             viewModel.login(email, password)
         }
 

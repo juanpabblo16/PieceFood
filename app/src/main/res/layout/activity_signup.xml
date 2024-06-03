@@ -1,12 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<<<<<<< HEAD
 <androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/group_6"
-    android:backgroundTint="#1B000000"
+    android:backgroundTint="#0D000000"
     android:hapticFeedbackEnabled="false">
 
 
@@ -27,7 +26,7 @@
             android:backgroundTint="#FFFFFF"
             android:text="Back"
             android:textAllCaps="false"
-            android:textColor="#5E35B1"
+            android:textColor="#238027"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -80,8 +79,9 @@
             android:layout_height="48dp"
             android:background="@drawable/round_button"
             android:ems="10"
-            android:hint="  Username"
+            android:hint="Username"
             android:inputType="text"
+            android:paddingStart="15dp"
             android:textSize="18sp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
@@ -110,8 +110,9 @@
             android:layout_height="60dp"
             android:background="@drawable/round_button"
             android:ems="10"
-            android:hint="  Email"
+            android:hint="Email"
             android:inputType="textEmailAddress"
+            android:paddingStart="15dp"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -134,11 +135,13 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/passwordText"
-            android:layout_width="300dp"
-            android:layout_height="62dp"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:layout_marginEnd="15dp"
             android:backgroundTint="#00FFFFFF"
-            android:hint="  Password"
-            app:layout_constraintBottom_toBottomOf="parent"
+            android:hint="Password"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
@@ -147,13 +150,12 @@
 
             <com.google.android.material.textfield.TextInputEditText
                 android:id="@+id/passwordET"
-                android:layout_width="match_parent"
-                android:layout_height="48dp"
-                android:background="@drawable/round_button"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
                 android:ems="15"
-                android:inputType="textPassword" />
-
-
+                android:inputType="textPassword"
+                android:paddingStart="15dp" />
         </com.google.android.material.textfield.TextInputLayout>
 
     </androidx.constraintlayout.widget.ConstraintLayout>
@@ -174,22 +176,23 @@
 
         <com.google.android.material.textfield.TextInputLayout
             android:id="@+id/confirmPasswordText"
-            android:layout_width="match_parent"
-            android:layout_height="match_parent"
-            android:hint="  Confirm Password"
+            android:layout_width="260dp"
+            android:layout_height="50dp"
+            android:layout_marginStart="15dp"
+            android:layout_marginTop="5dp"
+            android:hint="Confirm Password"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent"
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
-                android:id="@+id/confirmpassET"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:background="@drawable/round_button"
+                android:layout_width="260dp"
+                android:layout_height="50dp"
+                android:backgroundTint="#00FFFFFF"
                 android:ems="15"
-                android:inputType="textPassword" />
+                android:inputType="textPassword"
+                android:paddingStart="15dp" />
 
 
         </com.google.android.material.textfield.TextInputLayout>
@@ -213,7 +216,7 @@
             android:autoSizeTextType="none"
             android:autoText="true"
             android:background="@drawable/round_button"
-            android:backgroundTint="#185C43"
+            android:backgroundTint="#019972"
             android:contextClickable="false"
             android:elegantTextHeight="false"
             android:text="Create account"
@@ -230,171 +233,3 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
 </androidx.constraintlayout.widget.ConstraintLayout>
-=======
-
-
-
-<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
-    xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent">
-
-    <androidx.constraintlayout.widget.ConstraintLayout
-        android:layout_width="match_parent"
-        android:layout_height="match_parent">
-
-        <Button
-            android:id="@+id/signupBtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:background="#673AB7"
-            android:text="Crear cuenta"
-            android:textColor="@color/white"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/linearLayout" />
-
-        <Button
-            android:id="@+id/igotaccountBtn"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="8dp"
-            android:layout_marginEnd="32dp"
-            android:background="#D8D8D8"
-            android:text="Ya tengo cuenta"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.0"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/signupBtn" />
-
-        <TextView
-            android:id="@+id/textView"
-            android:layout_width="wrap_content"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="16dp"
-            android:layout_marginTop="16dp"
-            android:text="Registro"
-            android:textSize="34sp"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent" />
-
-        <LinearLayout
-            android:id="@+id/linearLayout"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_marginStart="32dp"
-            android:layout_marginTop="32dp"
-            android:layout_marginEnd="32dp"
-            android:orientation="vertical"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/textView">
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/nameInput"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Nombre">
-
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:id="@+id/nameET"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:inputType="text"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="#666" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/usernameInput"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Username">
-
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:id="@+id/usernameET"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="#666" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/emailInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Email">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/emailET"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:inputType="textEmailAddress"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="#666" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-                android:id="@+id/passwordInput"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:hint="Password"
-                app:layout_constraintWidth_percent="0.8">
-
-                <com.google.android.material.textfield.TextInputEditText
-                    android:id="@+id/passET"
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="#666" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-
-            <com.google.android.material.textfield.TextInputLayout
-
-                android:id="@+id/repasswordInput"
-                android:layout_width="match_parent"
-                android:layout_height="match_parent"
-                android:hint="Password"
-                app:layout_constraintWidth_percent="0.8">
-
-                <com.google.android.material.textfield.TextInputEditText
-
-                    android:layout_width="match_parent"
-                    android:layout_height="56dp"
-                    android:inputType="textPassword"
-                    android:maxLines="1"
-                    android:singleLine="true"
-                    android:textColor="@color/black"
-                    android:textColorHint="#666" />
-
-            </com.google.android.material.textfield.TextInputLayout>
-        </LinearLayout>
-
-    </androidx.constraintlayout.widget.ConstraintLayout>
-
-
-</ScrollView>
->>>>>>> 94568a2 (Initial commit)
