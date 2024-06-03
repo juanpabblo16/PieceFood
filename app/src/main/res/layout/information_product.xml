@@ -80,19 +80,21 @@
             android:id="@+id/plusBtn"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="53dp"
             android:text="+"
             app:layout_constraintBottom_toBottomOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/productList"
-            tools:layout_editor_absoluteX="157dp" />
+            app:layout_constraintStart_toEndOf="@+id/addButton"
+            app:layout_constraintTop_toBottomOf="@+id/productList" />
 
         <Button
             android:id="@+id/minusBtn"
             android:layout_width="56dp"
             android:layout_height="wrap_content"
+            android:layout_marginStart="13dp"
             android:text="-"
             app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintStart_toEndOf="@+id/quantity"
             app:layout_constraintTop_toBottomOf="@+id/productList"
-            tools:layout_editor_absoluteX="289dp" />
         app:layout_constraintVertical_bias="0.507" />
     </androidx.constraintlayout.widget.ConstraintLayout>
 

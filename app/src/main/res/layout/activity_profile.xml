@@ -18,15 +18,6 @@
         app:layout_constraintTop_toTopOf="parent"
         tools:context=".ProfileActivity">
 
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="443dp"
-            android:layout_height="250dp"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-             />
-
         <TextView
             android:id="@+id/emailTV"
             android:layout_width="wrap_content"
@@ -59,6 +50,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/main_menu_profile" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="161dp"
+            android:layout_height="161dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginBottom="14dp"
+            app:layout_constraintBottom_toTopOf="@+id/emailTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/round_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
