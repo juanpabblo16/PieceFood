@@ -18,11 +18,12 @@ class ProfileActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
 
+
         viewmodel.loadUser() //viewmodel.observeUser()
 
         viewmodel.userState.observe(this){
             binding.emailTV.text = it.email
-            binding.usernameTV.text = it.username
+
         }
     }
 }
