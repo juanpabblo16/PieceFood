@@ -9,7 +9,7 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutTop"
-        android:layout_width="0dp"
+        android:layout_width="1dp"
         android:layout_height="0dp"
         android:background="@color/mainColor"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBottom"
