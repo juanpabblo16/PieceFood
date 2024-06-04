@@ -1,11 +1,11 @@
 <?xml version="1.0" encoding="utf-8"?>
-<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".MainActivity">
-
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayoutTop"
@@ -13,58 +13,23 @@
         android:layout_height="0dp"
         android:background="@color/mainColor"
         app:layout_constraintBottom_toTopOf="@+id/constraintLayoutBottom"
-
-    tools:context=".ProfileActivity">
-
-    <ImageView
-        android:id="@+id/imageView"
-        android:layout_width="443dp"
-        android:layout_height="250dp"
-        android:src="@tools:sample/avatars"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toTopOf="parent"
-        app:srcCompat="#185C43" />
-
-    <androidx.cardview.widget.CardView
-        android:id="@+id/cardView"
-        android:layout_width="180dp"
-        android:layout_height="180dp"
-        android:layout_marginStart="115dp"
-        android:layout_marginTop="148dp"
-        android:layout_marginEnd="115dp"
-        app:cardCornerRadius="90dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
-
-        <ImageView
-            android:id="@+id/imageView"
-            android:layout_width="158dp"
-            android:layout_height="158dp"
-            android:layout_marginTop="15dp"
-            android:background="@drawable/round_image"
-            android:scaleType="centerCrop"
-            android:src="@drawable/ic_launcher_background"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintHorizontal_bias="0.498"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView2" />
+        tools:context=".ProfileActivity">
 
         <TextView
-            android:id="@+id/textViewDescription"
+            android:id="@+id/emailTV"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="5dp"
+            android:layout_marginBottom="32dp"
             android:text="Jesus Rodriguez User"
             android:textColor="@android:color/white"
             android:textSize="24sp"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView5"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.497"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/imageView" />
-
+            app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView2"
@@ -77,6 +42,7 @@
             app:menu="@menu/setting_menu" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
+            android:id="@+id/bottomNavigationView5"
             android:layout_width="409dp"
             android:layout_height="50dp"
             android:background="@android:color/white"
@@ -84,6 +50,16 @@
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/main_menu_profile" />
+
+        <ImageView
+            android:id="@+id/imageView3"
+            android:layout_width="161dp"
+            android:layout_height="161dp"
+            android:layout_marginStart="124dp"
+            android:layout_marginBottom="14dp"
+            app:layout_constraintBottom_toTopOf="@+id/emailTV"
+            app:layout_constraintStart_toStartOf="parent"
+            app:srcCompat="@drawable/round_image" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 
@@ -97,7 +73,6 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintBottom_toBottomOf="parent">
 
-
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView"
             android:layout_width="409dp"
@@ -108,62 +83,14 @@
             app:layout_constraintStart_toStartOf="parent"
             app:menu="@menu/main_menu" />
 
-        <ListView
-            android:id="@+id/postList"
+        <androidx.recyclerview.widget.RecyclerView
             android:layout_width="409dp"
             android:layout_height="307dp"
-            tools:layout_editor_absoluteX="1dp"
-            tools:layout_editor_absoluteY="1dp" />
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-</androidx.constraintlayout.widget.ConstraintLayout>
-
-        <androidx.cardview.widget.CardView
-            android:layout_width="145dp"
-            android:layout_height="148dp"
-            android:layout_margin="17dp"
-            app:cardCornerRadius="90dp" />
-    </androidx.cardview.widget.CardView>
-
-    <TextView
-        android:id="@+id/usernameTV"
-        android:layout_width="0dp"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="40dp"
-        android:text="Username"
-        android:textAlignment="center"
-        android:textSize="24sp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintHorizontal_bias="0.0"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/cardView" />
-
-    <TextView
-        android:id="@+id/textView5"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginBottom="24dp"
-        android:text="Profile"
-        android:textColor="#FFFFFF"
-        android:textSize="40sp"
-        android:textStyle="bold"
-        app:layout_constraintBottom_toTopOf="@+id/cardView"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent" />
-
-    <Button
-        android:id="@+id/backBtn"
-        android:layout_width="wrap_content"
-        android:layout_height="48dp"
-        android:layout_marginStart="16dp"
-        android:layout_marginTop="20dp"
-        android:background="#00FFFFFF"
-        android:backgroundTint="#000000"
-        android:text="Back"
-        android:textAllCaps="false"
-        android:textColor="#238027"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
 
 </androidx.constraintlayout.widget.ConstraintLayout>
