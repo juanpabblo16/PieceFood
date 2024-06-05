@@ -34,13 +34,13 @@ class SignupActivity : AppCompatActivity() {
                 viewModel.signup(
                     User("",
                         binding.usernameText.text.toString(),
-                        binding.emailText.text.toString()
+                        binding.emailText.text.toString(),
+                        binding.fullnameText.text.toString()
                     ),
                     password
                 )
 
-                // Ir a la pantalla de Login
-                startActivity(Intent(this@SignupActivity, LoginActivity::class.java))
+                //El inicio a la pagina de Login lo puse en el Observer (linea 56 de esta clase)
             } else {
                 //Las contraseñas no coinciden
                 Toast.makeText(this, "Las contraseñas no coinciden", Toast.LENGTH_SHORT).show()
@@ -54,17 +54,18 @@ class SignupActivity : AppCompatActivity() {
 
 
 
-        viewModel.authStatus.observe(this) {
-            when (it) {
+        viewModel.authStatus.observe(this) {state ->
+            when (state) {
                 is AppAuthState.Loading -> {
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                 }
                 is AppAuthState.Error -> {
-                    Toast.makeText(this, it.message, Toast.LENGTH_LONG).show()
+                    Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                 }
                 is AppAuthState.Success -> {
+                    Toast.makeText(this, state.message, Toast.LENGTH_LONG).show()
                     startActivity(
-                        Intent(this@SignupActivity, ProfileActivity::class.java)
+                        Intent(this@SignupActivity, LoginActivity::class.java)
                     )
                 }
             }

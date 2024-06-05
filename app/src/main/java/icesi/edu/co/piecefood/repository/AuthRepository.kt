@@ -35,7 +35,7 @@ class AuthRepositoryImpl(val authServices: AuthServices = AuthServices(),
                 //2. Guardar usuario en base de datos
                 user.id = it.uid
                 userServices.createUser(user)
-                return AppAuthState.Success(it.uid)
+                return AppAuthState.Success("Se ha registrado correctamente")
             } ?: run {
                 return AppAuthState.Error("Something went wrong")
             }

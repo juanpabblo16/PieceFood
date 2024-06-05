@@ -12,7 +12,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/cart"
-        android:title="Home" />
+        android:title="Kart" />
     <item
         android:id="@+id/bag"
         android:layout_width="wrap_content"
@@ -20,9 +20,9 @@
         android:icon="@drawable/bag"
         android:title="Bag" />
     <item
-        android:id="@+id/user"
+        android:id="@+id/profile"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:icon="@drawable/user"
-        android:title="User" />
+        android:title="Profile" />
 </menu>

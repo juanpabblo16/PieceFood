@@ -62,11 +62,11 @@
         android:layout_width="296dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="80dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="10dp"
+        android:layout_marginBottom="1dp"
         android:background="@drawable/round_button"
-        app:layout_constraintBottom_toTopOf="@+id/CL_email"
+        app:layout_constraintBottom_toTopOf="@+id/CL_fullname"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
@@ -90,19 +90,52 @@
     </androidx.constraintlayout.widget.ConstraintLayout>
 
     <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/CL_fullname"
+        android:layout_width="296dp"
+        android:layout_height="60dp"
+        android:layout_marginStart="50dp"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="50dp"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/round_button"
+        app:layout_constraintBottom_toTopOf="@+id/CL_email"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/CL_username"
+        app:layout_constraintVertical_bias="0.0">
+
+        <EditText
+            android:id="@+id/fullnameText"
+            android:layout_width="296dp"
+            android:layout_height="48dp"
+            android:background="@drawable/round_button"
+            android:ems="10"
+            android:hint="Fullname"
+            android:inputType="text"
+            android:paddingStart="15dp"
+            android:textSize="18sp"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+    <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/CL_email"
         android:layout_width="296dp"
         android:layout_height="60dp"
         android:layout_marginStart="50dp"
-        android:layout_marginTop="28dp"
+        android:layout_marginTop="40dp"
         android:layout_marginEnd="50dp"
-        android:layout_marginBottom="28dp"
-        android:background="@drawable/group_6"
+        android:layout_marginBottom="1dp"
+        android:background="@drawable/round_button"
         app:layout_constraintBottom_toTopOf="@+id/CL_password"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/CL_username">
+        app:layout_constraintTop_toBottomOf="@+id/CL_fullname"
+        app:layout_constraintVertical_bias="0.0">
 
         <EditText
             android:id="@+id/emailText"
@@ -170,6 +203,7 @@
         android:layout_marginEnd="50dp"
         android:background="@drawable/round_button"
         app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_password">
 
@@ -187,6 +221,7 @@
             app:passwordToggleEnabled="true">
 
             <com.google.android.material.textfield.TextInputEditText
+                android:id="@+id/confirmPasswordET"
                 android:layout_width="260dp"
                 android:layout_height="50dp"
                 android:backgroundTint="#00FFFFFF"
@@ -203,8 +238,8 @@
         android:id="@+id/CL_createAccountBtn"
         android:layout_width="182dp"
         android:layout_height="48dp"
-        android:layout_marginStart="105dp"
         android:layout_marginTop="58dp"
+        app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:layout_constraintTop_toBottomOf="@+id/CL_confirmPassword">
 

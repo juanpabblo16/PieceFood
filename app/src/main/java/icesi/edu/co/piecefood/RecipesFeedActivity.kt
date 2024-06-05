@@ -1,30 +1,22 @@
 package icesi.edu.co.piecefood
 
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
-import androidx.activity.viewModels
-import icesi.edu.co.piecefood.databinding.ActivityProfileBinding
-import icesi.edu.co.piecefood.viewmodel.ProfileViewModel
+import androidx.appcompat.app.AppCompatActivity
+import icesi.edu.co.piecefood.databinding.RecipesFeedBinding
 
-class ProfileActivity : AppCompatActivity() {
+
+class RecipesFeedActivity: AppCompatActivity() {
 
     val binding by lazy{
-        ActivityProfileBinding.inflate(layoutInflater)
+        RecipesFeedBinding.inflate(layoutInflater)
     }
-
-    val viewmodel: ProfileViewModel by viewModels()
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
-        binding.recipesOrPostsNav.selectedItemId = R.id.profile_posts
-        binding.menuNav.selectedItemId = R.id.profile
 
-        //Carga al usuario actual
-        viewmodel.loadUser() //viewmodel.observeUser()
-
-
+        binding.menuNav.selectedItemId = R.id.bag
 
         //Es el que se encarga de pasar entre paginas con el nav bar de main menu
         binding.menuNav.setOnItemSelectedListener { item ->
@@ -36,10 +28,10 @@ class ProfileActivity : AppCompatActivity() {
                     true
                 }
                 R.id.bag -> {
-                    startActivity(Intent(this@ProfileActivity, RecipesFeedActivity::class.java))
                     true
                 }
                 R.id.profile -> {
+                    startActivity(Intent(this@RecipesFeedActivity, ProfileActivity::class.java))
                     true
                 }
 
@@ -47,10 +39,6 @@ class ProfileActivity : AppCompatActivity() {
             }
         }
 
-        viewmodel.userState.observe(this){
-            binding.fullnameText.text = it.name
-        }
-
-
     }
+
 }

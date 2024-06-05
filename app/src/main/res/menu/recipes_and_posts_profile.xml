@@ -2,10 +2,12 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
 
     <item
+        android:id="@+id/profile_posts"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Publicaciones" />
     <item
+        android:id="@+id/profile_recipes"
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:title="Recetas" />

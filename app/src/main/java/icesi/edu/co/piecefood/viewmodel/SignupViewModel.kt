@@ -22,7 +22,9 @@ class SignupViewModel(val repo: AuthRepository = AuthRepositoryImpl()) : ViewMod
                 authStatus.value = AppAuthState.Loading("Cargando...")
             }
             val status = repo.signup(user, pass) //10s
-            withContext(Dispatchers.Main){authStatus.value = status}
+            withContext(Dispatchers.Main){
+                authStatus.value = status
+            }
 
         }
     }

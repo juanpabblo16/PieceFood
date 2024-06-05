@@ -32,7 +32,7 @@
             app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView2" />
 
         <TextView
-            android:id="@+id/emailTV"
+            android:id="@+id/fullnameText"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:layout_marginTop="5dp"
@@ -65,7 +65,7 @@
             android:textSize="14sp"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toBottomOf="@+id/emailTV" />
+            app:layout_constraintTop_toBottomOf="@+id/fullnameText" />
 
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
