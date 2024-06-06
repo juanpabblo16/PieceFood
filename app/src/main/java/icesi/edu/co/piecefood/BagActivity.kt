@@ -4,6 +4,9 @@ import android.app.Activity;
 import android.content.Intent
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
+import androidx.recyclerview.widget.LinearLayoutManager
+import androidx.recyclerview.widget.RecyclerView
+import icesi.edu.co.piecefood.adapter.IngredientAdapter
 import icesi.edu.co.piecefood.databinding.MainMenuBinding
 
 class BagActivity : AppCompatActivity() {
@@ -11,10 +14,21 @@ class BagActivity : AppCompatActivity() {
     private val binding by lazy {
         MainMenuBinding.inflate(layoutInflater)
     }
+    private lateinit var recyclerView: RecyclerView
+    private lateinit var ingredientAdapter: IngredientAdapter
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         setContentView(binding.root)
+
+        recyclerView = findViewById(R.id.recyclerView)
+        recyclerView.layoutManager = LinearLayoutManager(this)
+
+        // Aquí debes obtener la lista de ingredientes de la base de datos
+        val ingredients = listOf("Ingrediente 1", "Ingrediente 2", "Ingrediente 3")
+
+        ingredientAdapter = IngredientAdapter(ingredients)
+        recyclerView.adapter = ingredientAdapter
 
         val bottomNavigationView = binding.bottomNavigationView
 

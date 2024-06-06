@@ -22,8 +22,8 @@ class IngredientServices {
         return snapshot.toObject(Ingredient::class.java)
     }
 
-    suspend fun loadIngredientList(): List<Ingredient> {
-        val querySnapshot = firestore.collection("ingredients").get().await()
+    suspend fun loadAllIngredients(): List<Ingredient> {
+        val querySnapshot = Firebase.firestore.collection("ingredients").get().await()
         return querySnapshot.documents.mapNotNull { it.toObject(Ingredient::class.java) }
     }
 
@@ -31,5 +31,6 @@ class IngredientServices {
         val document = Firebase.firestore.collection("ingredients").document(id).get().await()
         return document.getString("name") ?: "Unknown"
     }
+
 }
 

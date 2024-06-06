@@ -9,8 +9,10 @@
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView"
-        android:layout_width="409dp"
+        android:layout_width="0dp"
         android:layout_height="56dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="@android:color/white"
         app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintEnd_toEndOf="parent"
@@ -19,8 +21,10 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:id="@+id/constraintLayout4"
-        android:layout_width="412dp"
+        android:layout_width="0dp"
         android:layout_height="574dp"
+        android:layout_marginStart="16dp"
+        android:layout_marginEnd="16dp"
         android:background="#FFFFFF"
         android:outlineAmbientShadowColor="#FF0000"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
@@ -32,7 +36,7 @@
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/recyclerView"
-            android:layout_width="419dp"
+            android:layout_width="0dp"
             android:layout_height="380dp"
             android:layout_marginTop="30dp"
             android:layout_marginBottom="216dp"
@@ -44,7 +48,7 @@
 
         <Button
             android:id="@+id/crearReceta"
-            android:layout_width="305dp"
+            android:layout_width="0dp"
             android:layout_height="113dp"
             android:layout_marginStart="16dp"
             android:layout_marginTop="41dp"

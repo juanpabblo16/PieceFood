@@ -32,7 +32,7 @@ class IngredientRepositoryImpl(
     }
 
     override suspend fun loadIngredientList(): List<Ingredient> {
-        return ingredientServices.loadIngredientList()
+        return ingredientServices.loadAllIngredients()
     }
 }
 
