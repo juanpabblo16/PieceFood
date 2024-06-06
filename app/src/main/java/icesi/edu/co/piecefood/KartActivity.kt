@@ -57,6 +57,8 @@ class KartActivity : AppCompatActivity() {
 
                 val bottomNavigationView = binding.bottomNavigationView4
 
+                bottomNavigationView.selectedItemId = R.id.kart
+
                 bottomNavigationView.setOnItemSelectedListener { menuItem ->
                         when (menuItem.itemId) {
                                 R.id.home -> {

@@ -23,6 +23,8 @@ class HomeActivity : AppCompatActivity() {
 
         val bottomNavigationView = binding.bottomNavigationView
 
+        bottomNavigationView.selectedItemId = R.id.home
+
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.home -> {

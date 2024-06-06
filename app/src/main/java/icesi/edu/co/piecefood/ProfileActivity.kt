@@ -27,6 +27,8 @@ class ProfileActivity : AppCompatActivity() {
 
         val bottomNavigationView = binding.bottomNavigationView
 
+        bottomNavigationView.selectedItemId = R.id.user
+
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
                 R.id.home -> {
@@ -53,5 +55,6 @@ class ProfileActivity : AppCompatActivity() {
                 else -> false
             }
         }
+
     }
 }

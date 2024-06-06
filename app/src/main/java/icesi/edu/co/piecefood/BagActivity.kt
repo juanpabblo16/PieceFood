@@ -25,12 +25,14 @@ class BagActivity : AppCompatActivity() {
         recyclerView.layoutManager = LinearLayoutManager(this)
 
         // Aquí debes obtener la lista de ingredientes de la base de datos
-        val ingredients = listOf("Ingrediente 1", "Ingrediente 2", "Ingrediente 3")
+        val ingredients = listOf("Tomate", "Lechuga", "Apio", "Manzana", "Papa")
 
         ingredientAdapter = IngredientAdapter(ingredients)
         recyclerView.adapter = ingredientAdapter
 
         val bottomNavigationView = binding.bottomNavigationView
+
+        bottomNavigationView.selectedItemId = R.id.bag
 
         bottomNavigationView.setOnItemSelectedListener { menuItem ->
             when (menuItem.itemId) {
