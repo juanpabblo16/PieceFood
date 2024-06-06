@@ -44,4 +44,10 @@ class UserServices {
         return querySnapshot.documents.mapNotNull { it.toObject(Portion::class.java) }
     }
 
+    suspend fun updatePortionQuantity(userId: String, portion: Portion) {
+        val userRef = Firebase.firestore.collection("users").document(userId)
+        val portionsRef = userRef.collection("portions").document(portion.ingredientId)
+        portionsRef.update("quantity", portion.quantity).await()
+    }
+
 }

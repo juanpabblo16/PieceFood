@@ -5,18 +5,11 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.activity.viewModels
 import androidx.lifecycle.Observer
-import androidx.lifecycle.lifecycleScope
 import com.google.firebase.auth.FirebaseAuth
 import icesi.edu.co.piecefood.adapter.PortionAdapter
 import icesi.edu.co.piecefood.databinding.InformationProductBinding
-import icesi.edu.co.piecefood.model.Ingredient
 import icesi.edu.co.piecefood.model.Portion
-import icesi.edu.co.piecefood.repository.IngredientRepository
-import icesi.edu.co.piecefood.repository.IngredientRepositoryImpl
-import icesi.edu.co.piecefood.repository.UserRepository
-import icesi.edu.co.piecefood.repository.UserRepositoryImpl
 import icesi.edu.co.piecefood.viewmodel.CanastaViewModel
-import kotlinx.coroutines.launch
 
 class KartActivity : AppCompatActivity() {
 
@@ -39,6 +32,20 @@ class KartActivity : AppCompatActivity() {
                 viewModel.portions.observe(this, Observer { portions ->
                         viewModel.ingredientNames.value?.let { ingredientNames ->
                                 updateUI(portions, ingredientNames)
+                        }
+                })
+
+                // Escuchar los clics en los elementos de la lista
+                binding.productList.setOnItemClickListener { parent, view, position, id ->
+                        val portion = portionAdapter.getItem(position)
+                        viewModel.selectPortion(portion)
+                }
+
+                // Observar los cambios en la cantidad seleccionada
+                viewModel.selectedPortion.observe(this, Observer { selectedPortion ->
+                        selectedPortion?.let {
+                                //binding.selectedIngredientTextView.text = "Selected Ingredient: ${it.ingredientId}"
+                                binding.quantity.text = it.quantity.toString()
                         }
                 })
 
@@ -77,16 +84,17 @@ class KartActivity : AppCompatActivity() {
                         }
                 }
 
-                binding.addButton.setOnClickListener {
-                        val ingredient = Ingredient(
-                                name = "Apio",
-                                type = "Vegetable",
-                                calories = 18,
-                                proteins = 1,
-                                fat = 0
-                        )
+                // Configurar los clics de los botones + y -
+                binding.plusBtn.setOnClickListener {
+                        viewModel.increaseQuantity()
+                }
 
-                        viewModel.addIngredientToUser(userId, ingredient, 5)
+                binding.minusBtn.setOnClickListener {
+                        viewModel.decreaseQuantity()
+                }
+
+                binding.addButton.setOnClickListener {
+                        viewModel.saveQuantity(userId)
                 }
 
                 // Cargar las porciones del usuario al iniciar la actividad

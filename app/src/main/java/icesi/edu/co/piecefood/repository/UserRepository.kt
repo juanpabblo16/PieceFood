@@ -9,11 +9,10 @@ import icesi.edu.co.piecefood.services.UserServices
 interface UserRepository {
 
     suspend fun loadUser() : User?
-
     fun observeUser(callback:(User) -> Unit)
-
     suspend fun addPortionToUser(userId: String, portion: Portion)
     suspend fun loadUserPortions(userId: String): List<Portion>
+    suspend fun updatePortionQuantity(userId: String, portion: Portion)
 
 }
 
@@ -43,6 +42,10 @@ class UserRepositoryImpl(
 
     override suspend fun loadUserPortions(userId: String): List<Portion> {
         return userServices.loadUserPortions(userId)
+    }
+
+    override suspend fun updatePortionQuantity(userId: String, portion: Portion) {
+        userServices.updatePortionQuantity(userId, portion)
     }
 
 }

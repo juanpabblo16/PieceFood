@@ -23,6 +23,9 @@ class CanastaViewModel(
     private val _ingredientNames = MutableLiveData<Map<String, String>>()
     val ingredientNames: LiveData<Map<String, String>> get() = _ingredientNames
 
+    private val _selectedPortion = MutableLiveData<Portion?>()
+    val selectedPortion: LiveData<Portion?> get() = _selectedPortion
+
     fun loadUserPortions(userId: String) {
         viewModelScope.launch {
             try {
@@ -43,19 +46,39 @@ class CanastaViewModel(
         }
     }
 
-    fun addIngredientToUser(userId: String, ingredient: Ingredient, quantity: Int) {
-        viewModelScope.launch {
-            try {
-                val ingredientId = ingredientRepository.addIngredient(ingredient)
-                if (ingredientId != null) {
-                    val portion = Portion(ingredientId, quantity)
-                    userRepository.addPortionToUser(userId, portion)
-                    loadUserPortions(userId) // Recargar la lista de porciones
-                }
-            } catch (e: Exception) {
-                // Maneja el error
+    fun selectPortion(portion: Portion) {
+        _selectedPortion.value = portion
+    }
+
+    fun increaseQuantity() {
+        _selectedPortion.value?.let { portion ->
+            portion.quantity++
+            _selectedPortion.value = portion
+        }
+    }
+
+    fun decreaseQuantity() {
+        _selectedPortion.value?.let { portion ->
+            if (portion.quantity > 0) {
+                portion.quantity--
+                _selectedPortion.value = portion
             }
         }
     }
+
+    fun saveQuantity(userId: String) {
+        _selectedPortion.value?.let { portion ->
+            // Actualiza la cantidad en la base de datos
+            viewModelScope.launch {
+                try {
+                    userRepository.updatePortionQuantity(userId, portion)
+                } catch (e: Exception) {
+                    // Manejar el error
+                }
+            }
+        }
+    }
+
+
 }
 
