@@ -1,6 +1,8 @@
 package icesi.edu.co.piecefood.services
 
 import com.google.firebase.firestore.FirebaseFirestore
+import com.google.firebase.firestore.ktx.firestore
+import com.google.firebase.ktx.Firebase
 import icesi.edu.co.piecefood.model.Ingredient
 import kotlinx.coroutines.tasks.await
 
@@ -23,6 +25,11 @@ class IngredientServices {
     suspend fun loadIngredientList(): List<Ingredient> {
         val querySnapshot = firestore.collection("ingredients").get().await()
         return querySnapshot.documents.mapNotNull { it.toObject(Ingredient::class.java) }
+    }
+
+    suspend fun getIngredientNameById(id: String): String {
+        val document = Firebase.firestore.collection("ingredients").document(id).get().await()
+        return document.getString("name") ?: "Unknown"
     }
 }
 

@@ -17,17 +17,26 @@ class CanastaViewModel(
     private val userRepository: UserRepository = UserRepositoryImpl()
 ) : ViewModel() {
 
-    private val _ingredients = MutableLiveData<List<Ingredient>>()
-    val ingredients: LiveData<List<Ingredient>> get() = _ingredients
+    private val _portions = MutableLiveData<List<Portion>>()
+    val portions: LiveData<List<Portion>> get() = _portions
 
-    fun loadUserIngredients(userId: String) {
+    private val _ingredientNames = MutableLiveData<Map<String, String>>()
+    val ingredientNames: LiveData<Map<String, String>> get() = _ingredientNames
+
+    fun loadUserPortions(userId: String) {
         viewModelScope.launch {
             try {
-                val portions = userRepository.loadUserPortions(userId)
-                val ingredientList = portions.mapNotNull { portion ->
-                    ingredientRepository.loadIngredient(portion.ingredientId!!)
+                val userPortions = userRepository.loadUserPortions(userId)
+                val ingredientIds = userPortions.map { it.ingredientId }.toSet()
+
+                val ingredientNamesMap = mutableMapOf<String, String>()
+                for (id in ingredientIds) {
+                    val name = ingredientRepository.getIngredientNameById(id)
+                    ingredientNamesMap[id] = name
                 }
-                _ingredients.value = ingredientList
+
+                _ingredientNames.value = ingredientNamesMap
+                _portions.value = userPortions
             } catch (e: Exception) {
                 // Maneja el error
             }
@@ -41,7 +50,7 @@ class CanastaViewModel(
                 if (ingredientId != null) {
                     val portion = Portion(ingredientId, quantity)
                     userRepository.addPortionToUser(userId, portion)
-                    loadUserIngredients(userId) // Recargar la lista de ingredientes
+                    loadUserPortions(userId) // Recargar la lista de porciones
                 }
             } catch (e: Exception) {
                 // Maneja el error
@@ -49,3 +58,4 @@ class CanastaViewModel(
         }
     }
 }
+
