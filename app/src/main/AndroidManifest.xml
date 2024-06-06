@@ -24,6 +24,8 @@
         <activity android:name=".SignupActivity" />
         <activity android:name=".ProfileActivity" />
         <activity android:name=".KartActivity" />
+        <activity android:name=".HomeActivity" />
+        <activity android:name=".BagActivity" />
         <meta-data
             android:name="preloaded_fonts"
             android:resource="@array/preloaded_fonts" />

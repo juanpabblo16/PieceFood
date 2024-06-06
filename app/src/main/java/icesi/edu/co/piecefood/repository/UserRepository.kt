@@ -2,6 +2,7 @@ package icesi.edu.co.piecefood.repository
 
 import com.google.firebase.Firebase
 import com.google.firebase.auth.auth
+import icesi.edu.co.piecefood.model.Portion
 import icesi.edu.co.piecefood.model.User
 import icesi.edu.co.piecefood.services.UserServices
 
@@ -10,6 +11,9 @@ interface UserRepository {
     suspend fun loadUser() : User?
 
     fun observeUser(callback:(User) -> Unit)
+
+    suspend fun addPortionToUser(userId: String, portion: Portion)
+    suspend fun loadUserPortions(userId: String): List<Portion>
 
 }
 
@@ -31,6 +35,14 @@ class UserRepositoryImpl(
                 callback(it)
             }
         }
+    }
+
+    override suspend fun addPortionToUser(userId: String, portion: Portion) {
+        userServices.addPortionToUser(userId, portion)
+    }
+
+    override suspend fun loadUserPortions(userId: String): List<Portion> {
+        return userServices.loadUserPortions(userId)
     }
 
 }

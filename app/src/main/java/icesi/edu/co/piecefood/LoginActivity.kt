@@ -45,7 +45,7 @@ class LoginActivity : AppCompatActivity() {
                 }
                 is AppAuthState.Success -> {
                     // Navegar a la actividad de perfil después de iniciar sesión correctamente
-                    startActivity(Intent(this@LoginActivity, ProfileActivity::class.java))
+                    startActivity(Intent(this@LoginActivity, HomeActivity::class.java))
                     finish()
                 }
             }
