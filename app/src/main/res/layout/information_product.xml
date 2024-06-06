@@ -16,8 +16,7 @@
         android:background="#FFFFFF"
         app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView4"
         app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toBottomOf="@+id/bottomNavigationView3">
+        app:layout_constraintStart_toStartOf="parent">
 
         <TextView
             android:id="@+id/nameProduct"
@@ -95,18 +94,8 @@
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintStart_toEndOf="@+id/quantity"
             app:layout_constraintTop_toBottomOf="@+id/productList"
-        app:layout_constraintVertical_bias="0.507" />
+            app:layout_constraintVertical_bias="0.507" />
     </androidx.constraintlayout.widget.ConstraintLayout>
-
-    <com.google.android.material.bottomnavigation.BottomNavigationView
-        android:id="@+id/bottomNavigationView3"
-        android:layout_width="409dp"
-        android:layout_height="56dp"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent"
-        android:background="#15C263"
-        app:menu="@menu/upper" />
 
     <com.google.android.material.bottomnavigation.BottomNavigationView
         android:id="@+id/bottomNavigationView4"

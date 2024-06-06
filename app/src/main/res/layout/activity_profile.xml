@@ -32,16 +32,6 @@
             app:layout_constraintStart_toStartOf="parent" />
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
-            android:id="@+id/bottomNavigationView2"
-            android:layout_width="409dp"
-            android:layout_height="56dp"
-            android:background="@color/mainColor"
-            app:layout_constraintEnd_toEndOf="parent"
-            app:layout_constraintStart_toStartOf="parent"
-            app:layout_constraintTop_toTopOf="parent"
-            app:menu="@menu/setting_menu" />
-
-        <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/bottomNavigationView5"
             android:layout_width="409dp"
             android:layout_height="50dp"
