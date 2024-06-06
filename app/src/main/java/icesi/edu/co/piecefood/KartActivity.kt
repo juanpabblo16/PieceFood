@@ -99,12 +99,11 @@ class KartActivity : AppCompatActivity() {
 
                 // Cargar las porciones del usuario al iniciar la actividad
                 viewModel.loadUserPortions(userId)
-
         }
 
         private fun updateUI(portions: List<Portion>, ingredientNames: Map<String, String>) {
                 portionAdapter.updatePortions(portions, ingredientNames)
         }
-
 }
+
 

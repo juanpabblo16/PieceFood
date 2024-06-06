@@ -1,5 +1,6 @@
 package icesi.edu.co.piecefood.viewmodel
 
+import android.util.Log
 import androidx.lifecycle.LiveData
 import androidx.lifecycle.MutableLiveData
 import androidx.lifecycle.ViewModel
@@ -68,16 +69,34 @@ class CanastaViewModel(
 
     fun saveQuantity(userId: String) {
         _selectedPortion.value?.let { portion ->
+            Log.d("CanastaViewModel", "ID de la porción: ${portion.ingredientId}, Cantidad: ${portion.quantity}, Usuario ID: $userId")
             // Actualiza la cantidad en la base de datos
             viewModelScope.launch {
                 try {
-                    userRepository.updatePortionQuantity(userId, portion)
+                    // Primero, obtén la lista actual de porciones del usuario
+                    val userPortions = (_portions.value ?: emptyList()).toMutableList()
+
+                    // Encuentra la posición de la porción actual en la lista
+                    val index = userPortions.indexOfFirst { it.ingredientId == portion.ingredientId }
+
+                    if (index != -1) {
+                        // Si se encuentra la porción en la lista, actualiza la cantidad
+                        userPortions[index] = portion
+                        _portions.value = userPortions
+
+                        // Luego, guarda la lista actualizada en la base de datos
+                        userRepository.updatePortionQuantity(userId, portion)
+                    } else {
+                        // Si la porción no se encuentra en la lista, no se puede guardar
+                        throw IllegalStateException("La porción no se encuentra en la lista de porciones del usuario.")
+                    }
                 } catch (e: Exception) {
                     // Manejar el error
                 }
             }
         }
     }
+
 
 
 }
