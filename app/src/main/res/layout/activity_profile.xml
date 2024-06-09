@@ -84,12 +84,30 @@
             app:menu="@menu/main_menu" />
 
         <androidx.recyclerview.widget.RecyclerView
+            android:id="@+id/recyclerView2"
             android:layout_width="409dp"
             android:layout_height="307dp"
+            android:layout_marginBottom="200dp"
             app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
             app:layout_constraintTop_toTopOf="parent" />
+
+        <Button
+            android:id="@+id/agregarBtn"
+            android:layout_width="48dp"
+            android:layout_height="wrap_content"
+            android:layout_marginStart="316dp"
+            android:layout_marginTop="22dp"
+            android:layout_marginEnd="16dp"
+            android:layout_marginBottom="21dp"
+            android:backgroundTint="#07937B"
+            android:text="+"
+            android:textColor="#FFFFFF"
+            app:layout_constraintBottom_toTopOf="@+id/bottomNavigationView"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/recyclerView2" />
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 

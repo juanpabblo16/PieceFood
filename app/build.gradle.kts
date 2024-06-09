@@ -59,4 +59,7 @@ dependencies {
     implementation("androidx.fragment:fragment-ktx:1.6.2")
     //Nos permite usar await para llamados a la red
     implementation("org.jetbrains.kotlinx:kotlinx-coroutines-play-services:1.8.0")
+    // Dependencias de la navegación de Jetpack
+    implementation("androidx.navigation:navigation-fragment-ktx:2.5.3")
+    implementation("androidx.navigation:navigation-ui-ktx:2.5.3")
 }

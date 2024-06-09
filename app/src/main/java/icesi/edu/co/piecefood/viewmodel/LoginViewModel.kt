@@ -20,7 +20,7 @@ class LoginViewModel(private val authRepository: AuthRepository) : ViewModel() {
 
     fun login(email: String, password: String) {
         viewModelScope.launch {
-            _authState.value = AppAuthState.Loading("Logging in...")
+            _authState.value = AppAuthState.Loading("Ingresando ...")
             val authState = authRepository.login(email, password)
             _authState.value = authState
         }

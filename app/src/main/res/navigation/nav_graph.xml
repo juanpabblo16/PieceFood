@@ -1,0 +1,23 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/nav_graph"
+    app:startDestination="@id/homeFragment">
+
+    <fragment
+        android:id="@+id/homeFragment"
+        android:name="icesi.edu.co.piecefood.fragments.HomeFragment"
+        android:label="Home" />
+    <fragment
+        android:id="@+id/kartFragment"
+        android:name="icesi.edu.co.piecefood.fragments.KartFragment"
+        android:label="Kart" />
+    <fragment
+        android:id="@+id/bagFragment"
+        android:name="icesi.edu.co.piecefood.fragments.BagFragment"
+        android:label="Bag" />
+    <fragment
+        android:id="@+id/userFragment"
+        android:name="icesi.edu.co.piecefood.fragments.UserFragment"
+        android:label="User" />
+</navigation>

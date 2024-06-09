@@ -8,7 +8,7 @@ import androidx.appcompat.app.AppCompatActivity
 import icesi.edu.co.piecefood.databinding.ActivityLoginBinding
 import icesi.edu.co.piecefood.model.AppAuthState
 import icesi.edu.co.piecefood.viewmodel.LoginViewModel
-class LoginActivity : AppCompatActivity() {
+class   LoginActivity : AppCompatActivity() {
 
     private lateinit var binding: ActivityLoginBinding
     private val viewModel: LoginViewModel by viewModels()
@@ -19,6 +19,8 @@ class LoginActivity : AppCompatActivity() {
         binding = ActivityLoginBinding.inflate(layoutInflater)
         setContentView(binding.root)
 
+
+
         // Configurar el botón de inicio de sesión
         binding.loginBtn.setOnClickListener {
             val passwordEditText = binding.passwordET.editText
@@ -28,9 +30,13 @@ class LoginActivity : AppCompatActivity() {
             viewModel.login(email, password)
         }
 
+
+
         binding.singupBtn.setOnClickListener {
             startActivity(Intent(this@LoginActivity, SignupActivity::class.java))
         }
+
+
 
         // Observar el estado de autenticación y tomar acciones en consecuencia
         viewModel.authState.observe(this) { state ->
