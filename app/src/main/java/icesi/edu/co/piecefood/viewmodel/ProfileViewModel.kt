@@ -20,11 +20,6 @@ class ProfileViewModel(val userRepo: UserRepository = UserRepositoryImpl()) : Vi
 
     //Estado
     val userState = MutableLiveData<User>()
-    private lateinit var homeFragment: HomeFragment
-    private lateinit var userFragment: UserFragment
-    private lateinit var fragment: KartFragment
-    private lateinit var bagFragment: BagFragment
-
 
     //Los eventos de entrada
     fun loadUser(){
@@ -45,7 +40,6 @@ class ProfileViewModel(val userRepo: UserRepository = UserRepositoryImpl()) : Vi
             userState.value = it
         } //alfa(fun(String) -> Unit)
     }
-
 
 
 

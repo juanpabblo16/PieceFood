@@ -26,13 +26,14 @@ class ProfileActivity : AppCompatActivity() {
 
         viewmodel.loadUser() //viewmodel.observeUser()
 
+
         viewmodel.userState.observe(this){
             binding.emailTV.text = it.email
 
         }
 
         binding.agregarBtn.setOnClickListener{
-            startActivity(Intent(this@ProfileActivity, SignupActivity::class.java))
+            startActivity(Intent(this@ProfileActivity, RecipePublishActivity::class.java))
 
     }
 

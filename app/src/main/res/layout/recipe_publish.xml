@@ -151,8 +151,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="text"
-                    android:text="Escriba aqui el paso" />
+                    android:hint="Escriba acá el paso"
+                    android:inputType="text" />
 
                 <Button
                     android:id="@+id/sumPasoBtn"
@@ -183,8 +183,8 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:inputType="text"
-                    android:text="Escriba aqui el ingrediente" />
+                    android:hint="Escriba aqui el ingrediente"
+                    android:inputType="text" />
 
                 <Button
                     android:id="@+id/sumIngrBtn"
