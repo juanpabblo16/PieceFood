@@ -5,7 +5,7 @@
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     android:background="@drawable/round_image"
-    tools:context=".MainActivity">
+    tools:context=".RecipePublishActivity">
 
     <ScrollView
         android:layout_width="match_parent"
@@ -23,8 +23,8 @@
 
             <androidx.constraintlayout.widget.ConstraintLayout
                 android:id="@+id/constraintLayout2"
-                android:layout_width="378dp"
-                android:layout_height="339dp"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
                 android:layout_marginTop="16dp"
                 android:background="@color/mainColor"
                 android:backgroundTint="@color/mainColor">
@@ -105,27 +105,24 @@
                 android:orientation="horizontal">
 
                 <Button
-                    android:id="@+id/desButton"
+                    android:id="@+id/breakfastBtn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="Desayuno" />
 
                 <Button
-                    android:id="@+id/almButton"
+                    android:id="@+id/lunchBtn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="Almuerzo" />
 
                 <Button
-                    android:id="@+id/cenaButton"
+                    android:id="@+id/dinnerBtn"
                     android:layout_width="0dp"
                     android:layout_height="wrap_content"
                     android:layout_weight="1"
-
                     android:text="Cena" />
 
             </LinearLayout>
@@ -141,12 +138,6 @@
                 android:layout_height="wrap_content"
                 android:orientation="vertical">
 
-                <androidx.constraintlayout.widget.ConstraintLayout
-                    android:layout_width="50dp"
-                    android:layout_height="wrap_content">
-
-                </androidx.constraintlayout.widget.ConstraintLayout>
-
                 <EditText
                     android:id="@+id/pasoTxt"
                     android:layout_width="match_parent"
@@ -160,7 +151,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp" />
 
                 <Button
                     android:id="@+id/sumPasoBtn"
@@ -199,7 +190,7 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:orientation="vertical"
-                    android:layout_marginTop="8dp"/>
+                    android:layout_marginTop="8dp" />
 
                 <Button
                     android:id="@+id/sumIngrBtn"
@@ -219,11 +210,8 @@
                     android:layout_height="wrap_content"
                     android:text="Publicar Receta"
                     android:textColorHighlight="#FF0000"
-                    android:background="@color/mainColor"
-                    />
-
+                    android:background="@color/mainColor" />
             </LinearLayout>
-
         </LinearLayout>
     </ScrollView>
 
@@ -236,5 +224,5 @@
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
         app:menu="@menu/main_menu" />
-
 </androidx.constraintlayout.widget.ConstraintLayout>
+
