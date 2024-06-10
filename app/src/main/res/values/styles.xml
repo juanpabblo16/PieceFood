@@ -9,5 +9,14 @@
             <item name="android:textColorHint">@color/hint_color</item>
         </style>
 
+    <style name="IngredienteTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+    <style name="PasoTextStyle">
+        <item name="android:textColor">@color/black</item>
+        <item name="android:textSize">18sp</item>
+    </style>
+
 
 </resources>

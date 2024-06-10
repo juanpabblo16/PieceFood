@@ -6,9 +6,10 @@ data class Recipes (
     val category: String = "",
     val id: String = "",
     val image: String = "",
-    val ingredients: List<String> = emptyList(),
+    val ingredients: String = "",
     val name: String = "",
-    val userID: String = ""
+    val userID: String = "",
+    var photoID: String? = null
 
 
     )

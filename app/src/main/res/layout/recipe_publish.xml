@@ -83,8 +83,8 @@
                     android:layout_marginTop="15dp"
                     android:layout_marginBottom="15dp"
                     android:ems="10"
+                    android:hint="Nombre de la Receta"
                     android:inputType="text"
-                    android:text="Nombre de la receta"
                     android:textColor="#FFFFFF"
                     app:layout_constraintBottom_toTopOf="@+id/frameLayout"
                     app:layout_constraintStart_toStartOf="parent"
@@ -127,6 +127,7 @@
                     android:layout_weight="1"
                     android:background="@drawable/round_button_green"
                     android:text="Cena" />
+
             </LinearLayout>
 
             <TextView
@@ -137,7 +138,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <androidx.constraintlayout.widget.ConstraintLayout
@@ -153,6 +154,13 @@
                     android:ems="10"
                     android:hint="Escriba acá el paso"
                     android:inputType="text" />
+
+                <LinearLayout
+                    android:id="@+id/pasoContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"/>
 
                 <Button
                     android:id="@+id/sumPasoBtn"
@@ -175,7 +183,7 @@
 
             <LinearLayout
                 android:layout_width="match_parent"
-                android:layout_height="match_parent"
+                android:layout_height="wrap_content"
                 android:orientation="vertical">
 
                 <EditText
@@ -183,8 +191,15 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:ems="10"
-                    android:hint="Escriba aqui el ingrediente"
+                    android:hint="Escriba aquí el ingrediente"
                     android:inputType="text" />
+
+                <LinearLayout
+                    android:id="@+id/ingContainer"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:orientation="vertical"
+                    android:layout_marginTop="8dp"/>
 
                 <Button
                     android:id="@+id/sumIngrBtn"
@@ -197,6 +212,16 @@
                     android:layout_width="match_parent"
                     android:layout_height="wrap_content"
                     android:text="-" />
+
+                <Button
+                    android:id="@+id/publishBtn"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="Publicar Receta"
+                    android:textColorHighlight="#FF0000"
+                    android:background="@color/mainColor"
+                    />
+
             </LinearLayout>
 
         </LinearLayout>
