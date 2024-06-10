@@ -27,6 +27,8 @@ class RecipePublishActivity : AppCompatActivity() {
     private var imageUri: Uri? = null
     private lateinit var auth: FirebaseAuth
     private var selectedCategory: String? = null
+    private lateinit var categoryToast: Toast
+
 
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
@@ -47,14 +49,20 @@ class RecipePublishActivity : AppCompatActivity() {
         // Configurar los listeners de los botones de desayuno, almuerzo y cena
         binding.desButton.setOnClickListener {
             selectCategoryButton(binding.desButton, "Desayuno")
+            Toast.makeText(this, "Desayuno", Toast.LENGTH_SHORT).show()
+
         }
 
         binding.almButton.setOnClickListener {
             selectCategoryButton(binding.almButton, "Almuerzo")
+           Toast.makeText(this, "Almuerzo", Toast.LENGTH_SHORT).show()
+
         }
 
         binding.cenaButton.setOnClickListener {
             selectCategoryButton(binding.cenaButton, "Cena")
+            Toast.makeText(this, "Cena", Toast.LENGTH_SHORT).show()
+
         }
 
         binding.btnSelectImage.setOnLongClickListener {
@@ -93,6 +101,8 @@ class RecipePublishActivity : AppCompatActivity() {
         selectedButton.isSelected = true
         selectedButton.setBackgroundResource(R.drawable.round_button_selected)
 
+        //Le da color a las categorias cuandno son seleccionadas
+
         when (selectedButton) {
             binding.desButton -> {
                 binding.almButton.setBackgroundResource(R.drawable.round_button_green)
@@ -109,6 +119,8 @@ class RecipePublishActivity : AppCompatActivity() {
         }
 
         selectedCategory = category
+
+
     }
 
     private fun addTextView(container: LinearLayout, text: String, isPaso: Boolean) {
@@ -140,7 +152,7 @@ class RecipePublishActivity : AppCompatActivity() {
         }
     }
 
-    private fun publishRecipe() {
+    private fun publishRecipe(  ) {
         val nombreReceta = binding.nombreReceta.text.toString().trim()
         val pasos = mutableListOf<String>()
         val ingredientes = mutableListOf<String>()
